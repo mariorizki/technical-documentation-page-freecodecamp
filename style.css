@@ -26,7 +26,7 @@ a {
   top: 0;
   left: 0;
   height: 100%;
-  min-width: 290px;
+  width: 300px;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   background-color: #212529;
 }
@@ -36,9 +36,9 @@ a {
 }
 
 /* --------------nav bar mobile query-------------------- */
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 899px) {
   #navbar {
-    position: fixed;
+    position: absolute;
     width: 100%;
     max-height: 275px;
     border: none;
@@ -48,7 +48,7 @@ a {
 /* ----------------------------------------------------- */
 
 #main-doc {
-  margin-top: 200px;
+  margin-top: 250px;
   padding: 2rem;
 }
 
@@ -86,7 +86,7 @@ pre {
   overflow: auto;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 900px) {
   .col-container {
     display: grid;
     grid-template-columns: 50% 50%;
