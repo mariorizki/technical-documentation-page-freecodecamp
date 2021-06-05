@@ -26,7 +26,7 @@ a {
   top: 0;
   left: 0;
   height: 100%;
-  width: 300px;
+  min-width: 290px;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   background-color: #212529;
 }
@@ -35,23 +35,31 @@ a {
   text-align: center;
 }
 
+/* --------------nav bar mobile query-------------------- */
 @media screen and (max-width: 768px) {
   #navbar {
     position: fixed;
     width: 100%;
-    height: fit-content;
+    max-height: 275px;
     border: none;
+    z-index: 1;
   }
 }
+/* ----------------------------------------------------- */
 
 #main-doc {
-  /* text-align: center; */
   margin-top: 200px;
   padding: 2rem;
 }
 
 .external-link {
-  color: #0089c7;
+  color: #ffc300;
+}
+
+.subtheme {
+  background-color: #4a4e69;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 @media screen and (min-width: 767px) {
