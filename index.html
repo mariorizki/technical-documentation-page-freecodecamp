@@ -7,8 +7,13 @@
     <title>Flexbox Technical Documentation Page</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <nav id="navbar">
@@ -587,12 +592,70 @@
         </div>
       </section>
       <section class="main-section" id="prefixing_flexbox">
-        <header>Prefixing Flexbox</header>
-        <h3>belom</h3>
+        <header>
+          <h3>Prefixing Flexbox</h3>
+        </header>
+        <hr />
+        <p>
+          Flexbox requires some vendor prefixing to support the most browsers
+          possible. It doesn’t just include prepending properties with the
+          vendor prefix, but there are actually entirely different property and
+          value names. This is because the Flexbox spec has changed over time,
+          creating an “old”, “tweener”, and “new” versions.
+        </p>
+        <p>
+          Perhaps the best way to handle this is to write in the new (and final)
+          syntax and run your CSS through Autoprefixer, which handles the
+          fallbacks very well.
+        </p>
+        <p>
+          Alternatively, here’s a Sass @mixin to help with some of the
+          prefixing, which also gives you an idea of what kind of things need to
+          be done:
+        </p>
+        <pre class="prettyprint lang-css">
+          <code>
+ @mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+ }
+
+ @mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+ } 
+
+ @mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+ }
+
+ .wrapper {
+  @include flexbox();
+ }
+
+ .item {
+  @include flex(1 200px);
+  @include order(2);
+ }
+          </code>
+        </pre>
       </section>
       <section class="main-section" id="reference">
-        <header>Reference</header>
-        <h3>belom</h3>
+        <header>
+          <h3>Reference</h3>
+        </header>
+        <hr />
+        <p>All the documentation in this page is taken from <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" class="external-link">CSS Tricks</a></p>
       </section>
     </main>
 
