@@ -35,6 +35,10 @@ a {
   text-align: center;
 }
 
+#navbar li {
+  color: #71a8d1;
+}
+
 /* --------------nav bar mobile query-------------------- */
 @media screen and (max-width: 815px) {
   #navbar {
