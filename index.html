@@ -146,86 +146,441 @@
           </h3>
         </header>
         <hr />
-        <img src="./images/01-container.svg" alt="" />
-        <h3>Properties for the Parent (flex container)</h3>
+        <div class="col-container">
+          <div class="left-col">
+            <img src="./images/01-container.svg" alt="" />
+            <h3 class="centered">
+              Properties for the Parent<br />(flex container)
+            </h3>
 
-        <div class="subtheme">
-          <h4>display</h4>
-          <p>
-            This defines a flex container; inline or block depending on the
-            given value. It enables a flex context for all its direct children.
-          </p>
-          <pre class="prettyprint lang-css">
+            <div class="subtheme subtheme-left">
+              <h4>display</h4>
+              <p>
+                This defines a flex container; inline or block depending on the
+                given value. It enables a flex context for all its direct
+                children.
+              </p>
+              <pre class="prettyprint lang-css">
             <code>
  .container {
-    display: flex; /* or inline-flex */
+   display: flex; /* or inline-flex */
  }
             </code>
         </pre>
-        </div>
-        <div class="subtheme">
-          <h4>flex-direction</h4>
-          <img src="./images/flex-direction.svg" alt="" />
-          <p>
-            This establishes the main-axis, thus defining the direction flex
-            items are placed in the flex container. Flexbox is (aside from
-            optional wrapping) a single-direction layout concept. Think of flex
-            items as primarily laying out either in horizontal rows or vertical
-            columns.
-          </p>
-          <pre class="prettyprint lang-css">
+            </div>
+            <div class="subtheme subtheme-left">
+              <h4>flex-direction</h4>
+              <img src="./images/flex-direction.svg" alt="" />
+              <p>
+                This establishes the main-axis, thus defining the direction flex
+                items are placed in the flex container. Flexbox is (aside from
+                optional wrapping) a single-direction layout concept. Think of
+                flex items as primarily laying out either in horizontal rows or
+                vertical columns.
+              </p>
+              <pre class="prettyprint lang-css">
             <code>
  .container {
-    flex-direction: row | row-reverse | 
-    column | column-reverse;
+   flex-direction: row | row-reverse | column | column-reverse;
  }
             </code>
           </pre>
-          <ul>
-            <li>row (default): left to right in ltr; right to left in rtl</li>
-            <li>row-reverse: right to left in ltr; left to right in rtl</li>
-            <li>column: same as row but top to bottom</li>
-            <li>column-reverse: same as row-reverse but bottom to top</li>
-          </ul>
-        </div>
-        <div class="subtheme">
-          <h4>flex-wrap</h4>
-          <img src="./images/flex-wrap.svg" alt="" />
-          <p>
-            By default, flex items will all try to fit onto one line. You can
-            change that and allow the items to wrap as needed with this
-            property.
-          </p>
-          <pre class="prettyprint lang-css">
+              <ul>
+                <li>
+                  row (default): left to right in ltr; right to left in rtl
+                </li>
+                <li>row-reverse: right to left in ltr; left to right in rtl</li>
+                <li>column: same as row but top to bottom</li>
+                <li>column-reverse: same as row-reverse but bottom to top</li>
+              </ul>
+            </div>
+            <div class="subtheme subtheme-left">
+              <h4>flex-wrap</h4>
+              <img src="./images/flex-wrap.svg" alt="" />
+              <p>
+                By default, flex items will all try to fit onto one line. You
+                can change that and allow the items to wrap as needed with this
+                property.
+              </p>
+              <pre class="prettyprint lang-css">
             <code>
  .container {
-    flex-wrap: nowrap | wrap | wrap-reverse;
+   flex-wrap: nowrap | wrap | wrap-reverse;
  }
             </code>
           </pre>
-          <ul>
-            <li>nowrap (default): all flex items will be on one line</li>
-            <li>
-              wrap: flex items will wrap onto multiple lines, from top to
-              bottom.
-            </li>
-            <li>
-              wrap-reverse: flex items will wrap onto multiple lines from bottom
-              to top.
-            </li>
-          </ul>
-          <p>
-            There are some
-            <a
-              href="https://css-tricks.com/almanac/properties/f/flex-wrap/"
-              class="external-link"
-              >visual demos of flex-wrap here</a
-            >
-            .
-          </p>
-        </div>
-        <div class="subtheme">
-          <h4>flex-flow</h4>
+              <ul>
+                <li>nowrap (default): all flex items will be on one line</li>
+                <li>
+                  wrap: flex items will wrap onto multiple lines, from top to
+                  bottom.
+                </li>
+                <li>
+                  wrap-reverse: flex items will wrap onto multiple lines from
+                  bottom to top.
+                </li>
+              </ul>
+              <p>
+                There are some
+                <a
+                  href="https://css-tricks.com/almanac/properties/f/flex-wrap/"
+                  class="external-link"
+                  >visual demos of flex-wrap here</a
+                >.
+              </p>
+            </div>
+            <div class="subtheme subtheme-left">
+              <h4>flex-flow</h4>
+              <p>
+                This is a shorthand for the flex-direction and flex-wrap
+                properties, which together define the flex container’s main and
+                cross axes. The default value is row nowrap.
+              </p>
+              <pre class="prettyprint lang-css">
+            <code>
+ .container {
+   flex-flow: column wrap;
+ }
+            </code>
+          </pre>
+            </div>
+            <div class="subtheme subtheme-left">
+              <h4>justify-content</h4>
+              <img src="./images/justify-content.svg" alt="" />
+              <p>
+                This defines the alignment along the main axis. It helps
+                distribute extra free space leftover when either all the flex
+                items on a line are inflexible, or are flexible but have reached
+                their maximum size. It also exerts some control over the
+                alignment of items when they overflow the line.
+              </p>
+              <pre class="prettyprint lang-css">
+            <code>
+ .container {
+   justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+}
+            </code>
+          </pre>
+              <ul>
+                <li>
+                  <strong>flex-start</strong> (default): items are packed toward
+                  the start of the flex-direction.
+                </li>
+                <li>
+                  <strong>flex-end</strong>: items are packed toward the end of
+                  the flex-direction.
+                </li>
+                <li>
+                  <strong>start</strong>: items are packed toward the start of
+                  the writing-mode direction.
+                </li>
+                <li>
+                  <strong>end</strong>: items are packed toward the end of the
+                  writing-mode direction.
+                </li>
+                <li>
+                  <strong>left</strong>: items are packed toward left edge of
+                  the container, unless that doesn’t make sense with the
+                  flex-direction, then it behaves like start.
+                </li>
+                <li>
+                  <strong>right</strong>: items are packed toward right edge of
+                  the container, unless that doesn’t make sense with the
+                  flex-direction, then it behaves like end.
+                </li>
+                <li>
+                  <strong>center</strong>: items are centered along the line
+                </li>
+                <li>
+                  <strong>space-between</strong> items are evenly distributed in
+                  the line; first item is on the start line, last item on the
+                  end line
+                </li>
+                <li>
+                  <strong>space-around</strong>: items are evenly distributed in
+                  the line with equal space around them. Note that visually the
+                  spaces aren’t equal, since all the items have equal space on
+                  both sides. The first item will have one unit of space against
+                  the container edge, but two units of space between the next
+                  item because that next item has its own spacing that applies.
+                </li>
+                <li>
+                  <strong>space-evenly</strong>: items are distributed so that
+                  the spacing between any two items (and the space to the edges)
+                  is equal.
+                </li>
+              </ul>
+              <p>
+                Note that that browser support for these values is nuanced. For
+                example, space-between never got support from some versions of
+                Edge, and start/end/left/right aren’t in Chrome yet. MDN
+                <a href="" class="external-link">has detailed charts</a>. The
+                safest values are flex-start, flex-end, and center.
+              </p>
+              <p>
+                There are also two additional keywords you can pair with these
+                values: safe and unsafe. Using safe ensures that however you do
+                this type of positioning, you can’t push an element such that it
+                renders off-screen (e.g. off the top) in such a way the content
+                can’t be scrolled too (called “data loss”).
+              </p>
+            </div>
+            <div class="subtheme subtheme-left">
+              <h4>align-items</h4>
+              <img src="./images/align-items.svg" alt="" />
+              <p>
+                This defines the default behavior for how flex items are laid
+                out along the cross axis on the current line. Think of it as the
+                justify-content version for the cross-axis (perpendicular to the
+                main-axis).
+              </p>
+              <pre class="prettyprint lang-css">
+            <code>
+ .container {
+   align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+ }
+            </code>
+          </pre>
+              <ul>
+                <li>
+                  <strong>stretch</strong> (default): stretch to fill the
+                  container (still respect min-width/max-width)
+                </li>
+                <li>
+                  <strong>flex-start / start / self-start</strong>: items are
+                  placed at the start of the cross axis. The difference between
+                  these is subtle, and is about respecting the flex-direction
+                  rules or the writing-mode rules.
+                </li>
+                <li>
+                  <strong>flex-end / end / self-end</strong>: items are placed
+                  at the end of the cross axis. The difference again is subtle
+                  and is about respecting flex-direction rules vs. writing-mode
+                  rules.
+                </li>
+                <li>
+                  <strong>center</strong>: items are centered in the cross-axis
+                </li>
+                <li>
+                  <strong>baseline</strong>: items are aligned such as their
+                  baselines align
+                </li>
+              </ul>
+              <p>
+                The safe and unsafe modifier keywords can be used in conjunction
+                with all the rest of these keywords (although note
+                <a href="" class="external-link">browser support</a>), and deal
+                with helping you prevent aligning elements such that the content
+                becomes inaccessible.
+              </p>
+            </div>
+            <div class="subtheme subtheme-left">
+              <h4>align-content</h4>
+              <img src="./images/align-content.svg" alt="" />
+              <p>
+                This aligns a flex container’s lines within when there is extra
+                space in the cross-axis, similar to how justify-content aligns
+                individual items within the main-axis.
+              </p>
+              <p>
+                <strong>Note</strong>: This property only takes effect on
+                multi-line flexible containers, where flex-flow is set to either
+                wrap or wrap-reverse). A single-line flexible container (i.e.
+                where flex-flow is set to its default value, no-wrap) will not
+                reflect align-content.
+              </p>
+              <pre class="prettyprint lang-css">
+                <code>
+ .container {
+   align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+ }
+                </code>
+              </pre>
+              <ul>
+                <li>
+                  <strong>normal</strong> (default): items are packed in their
+                  default position as if no value was set.
+                </li>
+                <li>
+                  <strong>flex-start / start</strong>: items packed to the start
+                  of the container. The (more supported) flex-start honors the
+                  flex-direction while start honors the writing-mode direction.
+                </li>
+                <li>
+                  <strong>flex-end / end</strong>: items packed to the end of
+                  the container. The (more support) flex-end honors the
+                  flex-direction while end honors the writing-mode direction.
+                </li>
+                <li>
+                  <strong>center</strong>: items centered in the container
+                </li>
+                <li>
+                  <strong>space-between</strong>: items evenly distributed; the
+                  first line is at the start of the container while the last one
+                  is at the end
+                </li>
+                <li>
+                  <strong>space-around</strong>: items evenly distributed with
+                  equal space around each line
+                </li>
+                <li>
+                  <strong>space-evenly</strong>: items are evenly distributed
+                  with equal space around them
+                </li>
+                <li>
+                  <strong>stretch</strong>: lines stretch to take up the
+                  remaining space
+                </li>
+              </ul>
+              <p>
+                The safe and unsafe modifier keywords can be used in conjunction
+                with all the rest of these keywords (although note
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
+                  class="external-link"
+                  >browser support</a
+                >), and deal with helping you prevent aligning elements such
+                that the content becomes inaccessible.
+              </p>
+            </div>
+          </div>
+          <div class="right-col">
+            <img src="./images/02-items.svg" alt="" />
+            <h3 class="centered">
+              Properties for the Children<br />(flex items)
+            </h3>
+            <div class="subtheme subtheme-right">
+              <h4>order</h4>
+              <img src="./images/order.svg" alt="" />
+              <p>
+                By default, flex items are laid out in the source order.
+                However, the order property controls the order in which they
+                appear in the flex container.
+              </p>
+              <pre class="prettyprint lang-css">
+                <code>
+ .item {
+   order: 5; /* default is 0 */
+ }
+                </code>
+              </pre>
+            </div>
+            <div class="subtheme subtheme-right">
+              <h4>flex-grow</h4>
+              <img src="./images/flex-grow.svg" alt="" />
+              <p>
+                This defines the ability for a flex item to grow if necessary.
+                It accepts a unitless value that serves as a proportion. It
+                dictates what amount of the available space inside the flex
+                container the item should take up.
+              </p>
+              <p>
+                If all items have flex-grow set to 1, the remaining space in the
+                container will be distributed equally to all children. If one of
+                the children has a value of 2, the remaining space would take up
+                twice as much space as the others (or it will try to, at least).
+              </p>
+              <pre class="prettyprint lang-css">
+                <code>
+ .item {
+   flex-grow: 4; /* default 0 */
+ }
+                </code>
+              </pre>
+              <p>Negative numbers are invalid.</p>
+            </div>
+            <div class="subtheme subtheme-right">
+              <h4>flex-shrink</h4>
+              <p>
+                This defines the ability for a flex item to shrink if necessary.
+              </p>
+              <pre class="prettyprint lang-css">
+                <code>
+ .item {
+   flex-shrink: 3; /* default 1 */
+ }
+                </code>
+              </pre>
+              <p>Negative numbers are invalid.</p>
+            </div>
+            <div class="subtheme subtheme-right">
+              <h4>flex-basis</h4>
+              <p>
+                This defines the default size of an element before the remaining
+                space is distributed. It can be a length (e.g. 20%, 5rem, etc.)
+                or a keyword. The auto keyword means “look at my width or height
+                property” (which was temporarily done by the main-size keyword
+                until deprecated). The content keyword means “size it based on
+                the item’s content” – this keyword isn’t well supported yet, so
+                it’s hard to test and harder to know what its brethren
+                max-content, min-content, and fit-content do.
+              </p>
+              <pre class="prettyprint lang-css">
+                <code>
+ .item {
+   flex-basis: | auto; /* default auto */
+ }
+                </code>
+              </pre>
+              <p>
+                If set to 0, the extra space around content isn’t factored in.
+                If set to auto, the extra space is distributed based on its
+                flex-grow value.
+                <a
+                  href="https://www.w3.org/TR/css3-flexbox/images/rel-vs-abs-flex.svg"
+                  class="external-link"
+                  >See this graphic.</a
+                >
+              </p>
+            </div>
+            <div class="subtheme subtheme-right">
+              <h4>flex</h4>
+              <p>
+                This is the shorthand for flex-grow, flex-shrink and flex-basis
+                combined. The second and third parameters (flex-shrink and
+                flex-basis) are optional. The default is 0 1 auto, but if you
+                set it with a single number value, it’s like 1 0.
+              </p>
+              <pre class="prettyprint lang-css">
+                <code>
+ .item {
+   flex: none | [ 'flex-grow' 'flex-shrink' || 'flex-basis' ]
+ }
+                </code>
+              </pre>
+              <p>
+                <strong
+                  >It is recommended that you use this shorthand
+                  property</strong
+                >
+                rather than set the individual properties. The shorthand sets
+                the other values intelligently.
+              </p>
+            </div>
+            <div class="subtheme subtheme-right">
+              <h4>align-self</h4>
+              <img src="./images/align-self.svg" alt="" />
+              <p>
+                This allows the default alignment (or the one specified by
+                align-items) to be overridden for individual flex items.
+              </p>
+              <p>
+                Please see the align-items explanation to understand the
+                available values.
+              </p>
+              <pre class="prettyprint lang-css">
+                <code>
+ .item {
+   align-self: auto | flex-start | flex-end | center | baseline | stretch;
+ }
+                </code>
+              </pre>
+              <p>
+                Note that float, clear and vertical-align have no effect on a
+                flex item.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <section class="main-section" id="prefixing_flexbox">

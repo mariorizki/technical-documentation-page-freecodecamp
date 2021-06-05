@@ -36,7 +36,7 @@ a {
 }
 
 /* --------------nav bar mobile query-------------------- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 959px) {
   #navbar {
     position: fixed;
     width: 100%;
@@ -53,16 +53,44 @@ a {
 }
 
 .external-link {
-  color: #ffc300;
+  color: #1e6091;
+}
+
+.col-container {
+  background: linear-gradient(to right, #e9ecef, #dee2e6);
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #000;
 }
 
 .subtheme {
-  background-color: #4a4e69;
   padding: 1rem;
   margin: 1rem;
+  border-radius: 0.5rem;
 }
 
-@media screen and (min-width: 767px) {
+.subtheme-left {
+  background: linear-gradient(#9a8c98, #f2e9e4);
+}
+
+.subtheme-right {
+  background: linear-gradient(#f8ad9d, #ffdab9);
+}
+
+.centered {
+  text-align: center;
+}
+
+pre {
+  overflow: auto;
+}
+
+@media screen and (min-width: 960px) {
+  .col-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
   #main-doc {
     margin-top: 0;
     margin-left: 300px;
