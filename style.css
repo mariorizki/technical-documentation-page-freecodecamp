@@ -60,6 +60,10 @@ p {
   padding: 2rem;
 }
 
+#main-doc li {
+  font-size: 0.8rem;
+}
+
 .external-link {
   color: #71a8d1;
 }
@@ -111,6 +115,9 @@ footer {
     margin-left: 300px;
   }
   p {
+    font-size: 1rem;
+  }
+  #main-doc li {
     font-size: 1rem;
   }
 }
